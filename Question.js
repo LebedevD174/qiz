@@ -4,8 +4,8 @@ class Question {
   #question;
 
   constructor({ question, answers }) {
-    this.#answers = answers;
     this.#question = question;
+    this.#answers = answers;
   }
 
   #transform() {
@@ -26,6 +26,7 @@ class Question {
     return this.#question;
   }
 }
+
 
 // const cont = new Question({ question: 'Как спать', answers: 'Лежа\nСтоя\n\$За кодом' });
 // const cooo = new Question({
