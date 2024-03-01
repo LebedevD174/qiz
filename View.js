@@ -1,39 +1,43 @@
-const inquirer = require("inquirer");
+const inquirer = require('inquirer');
 
 class QizView {
-  constructor({ question, answers } = {}) {
-    this.question = question;
-    this.answers = answers;
-  }
+  // constructor({ question, answers } = {}) {
+  //   this.question = question;
+  //   this.answers = answers;
+  // }
 
   async selectTopic(topics) {
-    await inquirer
+    return await inquirer
       .prompt([
-        { type: "input", name: "username", message: "Введи пожалуйста имя:" },
+        { type: 'input', name: 'username', message: 'Введи пожалуйста имя:' },
         {
-          type: "list",
-          name: "topic",
-          message: "Выбери пожалуйста тему",
+          type: 'list',
+          name: 'topic',
+          message: 'Выбери пожалуйста тему',
           choices: topics,
         },
       ])
-      .then((topics) => console.log(topics));
-  }
+      .then((topics) => {
+        console.log(topics)
+        return topics['topic']
+      });
+  
+    }
 
-  async displayQestion(question) {
+  async displayQestion(question, answers) {
     const card = await inquirer.prompt([
       {
-        type: "list",
-        name: "bonuses",
-        message: this.question,
-        choices: this.answers,
+        type: 'list',
+        name: 'bonuses',
+        message: question,
+        choices: answers,
       },
     ]);
     console.log(card);
-    if (card.bonuses === 60) {
-      console.log("Ты умничка! Все твои ответы правильные");
+    if (card.bonuses === 10) {
+      console.log('Ты умничка!');
     } else {
-      console.log("Попробуй сыграть еще раз и у тебя все получится!");
+      console.log('у тебя все получится! Когда-нибудь');
     }
   }
 }
