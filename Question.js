@@ -26,14 +26,16 @@ class Question {
     return this.#question;
   }
 }
+
+
+// const cont = new Question({ question: 'Как спать', answers: 'Лежа\nСтоя\n\$За кодом' });
+// const cooo = new Question({
+//   question: '\r\n Как Андрею сделать лекции еще продуктивнее?\r\n',
+//   answers: '\r\n' + 'Проводить их вместе с Даней\r\n'
+//   + '$Купить новую клавиатуру\r\n' + 'Писать код на Python\r\n'
+// });
+
+// console.log(cooo.question);
+// console.log(cooo.answers);
+
 module.exports = Question;
-
-const cont = new Question({ question: 'Как спать', answers: 'Лежа\nСтоя\n\$За кодом' });
-const cooo = new Question({
-  question: '\r\n Как Андрею сделать лекции еще продуктивнее?\r\n',
-  answers: '\r\n' + 'Проводить их вместе с Даней\r\n'
-  + '$Купить новую клавиатуру\r\n' + 'Писать код на Python\r\n'
-});
-
-console.log(cooo.question);
-console.log(cooo.answers);
